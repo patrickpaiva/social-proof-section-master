@@ -1,0 +1,230 @@
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(300, 24%, 96%);
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+
+    background-image: url('/images/bg-pattern-top-desktop.svg'), url('/images/bg-pattern-bottom-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: 100px 0, 100% -42%;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+.attribution a {
+color: hsl(228, 45%, 44%);
+}
+
+.container {
+    width: 1000px;
+    height: 551px;
+
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 360px auto;
+    grid-template-rows: 300px 235px;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: 
+    "title rates"
+    "cards cards";
+
+    row-gap: 16px;
+}
+
+.title h1 {
+    color: hsl(300, 43%, 22%);
+    font-weight: 700;
+    font-size: 38px;
+    letter-spacing: -1px;
+}
+
+.title p {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.rates {
+    display: flex;
+    flex-direction: column;
+    justify-self: self-end;
+}
+
+.rates >div {
+    width: 280px;
+    padding: 14px 18px;
+    background-color: hsla(302, 10%, 53%, 0.15);
+    margin-top: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+
+    font-size: 10px;
+    color: hsl(300, 43%, 22%);
+    font-weight: 700;
+
+}
+
+.rates .stars {
+    display: inline-flex;
+}
+
+.rates .stars img {
+    width: 12px;
+    margin-right: 4px;
+}
+
+.rates .stars img:last-child {
+    margin-right: 20px;
+}
+
+.rates >div:first-child {
+    margin-top: 0;
+}
+
+.rate3 {
+    margin-left: 100px;
+}
+
+.rate2 {
+    margin-left: 50px;
+}
+
+.cards {
+    grid-area: cards;
+
+    display: flex;
+    justify-content: space-around;
+    column-gap: 20px;
+    height: 210px;
+}
+
+.card {
+    background-color: hsl(300, 43%, 22%);
+    padding: 32px 22px;
+    border-radius: 8px;
+    color: white;
+    height: 130px;
+}
+
+.card .profile {
+    display: flex;
+    align-items: center;
+    height: 34px;
+}
+
+.card .profile img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.card .profile div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.card .profile div p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card .profile div p:last-child {
+    color: hsl(333, 80%, 67%);
+    font-weight: 400;
+}
+
+.card .testimonial {
+    max-width: 255px;
+    font-size: 11px;
+    margin-bottom: 0;
+    line-height: 20px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card:last-child {
+    margin-top: 25px;
+}
+
+.card:nth-child(2) {
+    margin-top: 12.5px;
+}
+
+@media (max-width: 375px) {
+    body {
+        background-image: url('/images/bg-pattern-top-mobile.svg');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 90vw;
+        justify-items: center;
+        justify-content: initial;
+    }
+
+    .title {
+        width: 90vw;
+        height: min-content;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+
+        margin-top: 30px;
+    }
+
+    .title h1 {
+        line-height: 36px;
+    }
+
+    .title h1, .title p {
+        text-align: center;
+    }
+
+    .rates >div {
+        margin-left: 0;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+
+    .rates .stars img:last-child {
+        margin-right: 0;
+    }
+
+    .cards {
+        width: 90vw;
+        height: min-content;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .card:last-child {
+        margin-top: 0px;
+    }
+    
+    .card:nth-child(2) {
+        margin-top: 0px;
+    }
+}
